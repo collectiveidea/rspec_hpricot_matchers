@@ -1,5 +1,5 @@
 module RspecHpricotMatchers
-  class HaveTag
+  class MatchElement
     def initialize(selector, inner_text_or_options, options, &block)
       @selector = selector
       if Hash === inner_text_or_options
@@ -106,7 +106,7 @@ module RspecHpricotMatchers
       end
   end
 
-  def have_tag(selector, inner_text_or_options = nil, options = {}, &block)
-    HaveTag.new(selector, inner_text_or_options, options, &block)
+  def match_element(selector, inner_text_or_options = nil, options = {}, &block)
+    MatchElement.new(selector, inner_text_or_options, options, &block)
   end
 end
